@@ -1,2 +1,4 @@
-# katierusch.ukhc
-Static coded landing page for UK HealthCare
+# ukhc-landing
+## Compiling Sass
+Run ```bash compile``` in /scss
+
