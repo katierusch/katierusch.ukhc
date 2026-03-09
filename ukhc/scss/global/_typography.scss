@@ -1,0 +1,151 @@
+// Typography
+
+// -Root
+// -Headlines
+// -Body Copy
+// -Other Type Styles
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/41c21f");
+
+@font-face {
+    font-family: "AvenirNextLTPro-Regular";
+    src: url('../fonts/AvenirNextLTProRegular/font.woff2') format('woff2'), url('../fonts/AvenirNextLTProRegular/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "AvenirNextLTPro-Bold";
+    src: url('../fonts/AvenirNextLTProBold/font.woff2') format('woff2'), url('../fonts/AvenirNextLTProBold/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: "AvenirNextLTPro-Demi";
+    src: url('../fonts/AvenirNextLTProDemi/font.woff2') format('woff2'), url('../fonts/AvenirNextLTProDemi/font.woff') format('woff');
+}
+
+
+
+
+*,
+*::before,
+*::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+// Root
+html,
+body {
+    line-height: 1.4;
+    font-family: "AvenirNextLTPro-Regular", Helvetica, Arial, sans-serif;
+}
+
+
+// Headlines
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0rem 0 1rem 0;
+    line-height: 1.2;
+    font-weight: normal;
+    font-family: "AvenirNextLTPro-Bold", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    @include fluidTypeSize(4, 2);
+    text-transform: uppercase;
+}
+
+h2 {
+    // font-size: ;
+    @include fluidTypeSize(3.4, 2);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: "AvenirNextLTPro-Regular", Helvetica, Arial, sans-serif;
+    line-height: 1;
+
+    & .blue-headline,
+    .white-headline {
+        font-family: "AvenirNextLTPro-Bold", Helvetica, Arial, sans-serif;
+    }
+}
+
+h3 {
+    // font-size: ;
+    @include fluidTypeSize(1.75, 1.5);
+    margin-bottom: 0rem;
+    color: $c-blue;
+    // color: $c-black;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+h4 {
+    // font-size: ;
+}
+
+h5 {
+    // font-size: ;
+}
+
+h6 {
+    // font-size: ;
+}
+
+.intro {
+    font-size: 1.1875rem;
+    max-width: 46rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blue-headline {
+    color: $c-blue;
+}
+
+// Body Copy
+
+p,
+ul,
+ol,
+blockquote,
+address {
+    margin: 1rem 0;
+    font-style: normal;
+}
+
+ul,
+ol {
+    list-style: none;
+
+    li {
+        // text-align: center;
+        margin-bottom: 1rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+a {
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+}
+
+%small,
+small {
+    font-size: 0.875em;
+    font-style: italic;
+}

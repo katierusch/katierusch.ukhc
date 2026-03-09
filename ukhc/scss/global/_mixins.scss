@@ -1,0 +1,46 @@
+// Type Scaling
+@mixin fluidTypeSize($_f-maxFont, $_f-minFont: 1, $_mq-maxWidth: 75, $_mq-minWidth: 20) {
+
+    ////// Description:
+    // - mixin to fluidly scale type from a minimum font size to a maximum font size, within a range of screen sizes, while maintaining ability for user to adjust preferred base font size
+    ////
+
+    ////// @param $_f-maxFont
+    // - the largest size that the type should be
+    // - should be a UNITLESS value (but will ultimately have rem appended)
+    // - REQUIRED parameter
+    ////
+
+    ////// @param $_f-minFont
+    // - the smallest size that the type should be
+    // - should be a UNITLESS value (but will ultimately have rem appended)
+    // - defaults to the root font size
+    ////
+
+    ////// @param $_mq-maxWidth
+    // - the screen size at which the max font size should be reached and the type should stop growing
+    // - should be a UNITLESS value (but will ultimately have em appended)
+    // - defaults to 75em (1200px)
+    ////
+
+    ////// @param $_mq-minWidth
+    // - the screen size at which the type should begin to scale from small to large
+    // - should be a UNITLESS value (but will ultimately have em appended)
+    // - defaults to 20em (320px)
+    ////
+
+    ////// Instructions:
+    // - Do not apply to the html or body elements
+    // - Reserve use for larger display type, not body type
+    ////
+
+    font-size: #{$_f-minFont}rem;
+
+    @media (min-width: #{$_mq-minWidth}rem) and (max-width: #{$_mq-maxWidth}rem) {
+        font-size: calc(#{$_f-minFont}rem + (#{$_f-maxFont} - #{$_f-minFont}) * ((100vw - #{$_mq-minWidth}rem) / (#{$_mq-maxWidth} - #{$_mq-minWidth})));
+    }
+
+    @media (min-width: #{$_mq-maxWidth}rem) {
+        font-size: #{$_f-maxFont}rem;
+    }
+}

@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 1rem 0;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 20rem) and (max-width: 75rem) {
+  h1 {
+    font-size: calc(2rem + (6 - 2) * ((100vw - 20rem) / (75 - 20)));
+  }
+}
+@media (min-width: 75rem) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+p,
+ul,
+ol,
+blockquote,
+address {
+  margin: 1rem 0;
+  font-style: normal;
+}
+
+small {
+  font-size: 0.875em;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=main.css.map */
